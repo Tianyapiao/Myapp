@@ -1,6 +1,7 @@
 package com.example.asus.algorithm.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -40,6 +41,8 @@ public class PaixuFragment extends Fragment {
                 switch (position) {
                     case 0:
                         Toast.makeText(getActivity(), "haha0", Toast.LENGTH_SHORT).show();
+                        Intent intent =new Intent("com.example.asus.algorithm.open");
+                        startActivity(intent);
                         break;
                     case 1:
                         Toast.makeText(getActivity(), "haha1", Toast.LENGTH_SHORT).show();

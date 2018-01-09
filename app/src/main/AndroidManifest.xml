@@ -11,12 +11,22 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
 
-        </activity>
-        <activity android:name=".activity.BubbleSortActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.BubbleSortActivity">
+
+
+        </activity>
+
+        <activity android:name=".activity.NavigateActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="com.example.asus.algorithm.open"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
             </intent-filter>
 
         </activity>
