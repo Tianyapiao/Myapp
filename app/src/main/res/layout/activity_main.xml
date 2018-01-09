@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#3F51B5">
+
+        <TextView
+            android:id="@+id/txt_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="#ff0000"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/text_gray"/>
+
+    </RelativeLayout>
+
+
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/transparent"
+        >
+
+
+        <RadioButton
+            android:id="@+id/rd_index"
+            style="@style/tab_menu_item"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/tab_menu_index"
+            android:text="首页"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rd_paixu"
+            style="@style/tab_menu_item"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/tab_menu_paixu"
+            android:text="排序"
+            />
+
+        <RadioButton
+            android:id="@+id/rd_profile"
+            style="@style/tab_menu_item"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/tab_menu_profile"
+            android:text="我的"
+            />
+
+
+    </RadioGroup>
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rd_group"
+        android:layout_below="@id/ly_top_bar"
+        android:background="#ffffff">
+
+    </FrameLayout>
+
+</RelativeLayout>
