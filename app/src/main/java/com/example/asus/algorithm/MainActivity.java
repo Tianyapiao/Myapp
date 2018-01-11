@@ -1,16 +1,19 @@
 package com.example.asus.algorithm;
 
-
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.asus.algorithm.fragment.IndexFragment;
+import com.example.asus.algorithm.fragment.MyInfoFragment;
 import com.example.asus.algorithm.fragment.PaixuFragment;
+import com.example.asus.algorithm.menu.MyMenu;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -19,10 +22,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private RadioButton rd_paixu;
     private RadioButton rd_profile;
 
-    private IndexFragment fg1,fg3;
+    private IndexFragment fg1;
     private PaixuFragment fg2;
+    private MyInfoFragment fg3;
 
     private TextView topbar;
+    private ImageView iv_more;
 
     //构造适配器
     //List<Fragment> fragments=new ArrayList<>();
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       iv_more = (ImageView) findViewById(R.id.iv_more);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar!=null){
             actionBar.hide();
@@ -86,10 +92,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             case R.id.rd_index:
                 if (topbar!=null){
                     topbar.setText("首页");
+                    if (iv_more!=null){
+                        iv_more.setVisibility(View.INVISIBLE);
+                    }
                 }
-
                 if(fg1==null){
-                    fg1 = new IndexFragment("第一个Fragment");
+                    fg1 = new IndexFragment();
 
                     transaction.add(R.id.fragment_container,fg1);
                 }else{
@@ -98,7 +106,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.rd_paixu:
                 if (topbar!=null){
-                    topbar.setText("排序算法");
+                   topbar.setText("排序算法");
+                    if (iv_more!=null){
+                        iv_more.setVisibility(View.INVISIBLE);
+                    }
+
                 }
                 if(fg2==null){
                     fg2 = new PaixuFragment();
@@ -111,10 +123,17 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             case R.id.rd_profile:
                 if (topbar!=null){
                     topbar.setText("我的");
+                    iv_more.setVisibility(View.VISIBLE);
+                    iv_more.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //显示菜单
+                            MyMenu.showPopupMenu(MainActivity.this,iv_more);
+                        }
+                    });
                 }
                 if(fg3==null){
-                    fg3 = new IndexFragment("第三个Fragment");
-
+                    fg3 = new MyInfoFragment();
                     transaction.add(R.id.fragment_container,fg3);
                 }else{
                     transaction.show(fg3);

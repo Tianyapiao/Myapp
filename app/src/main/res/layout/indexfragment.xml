@@ -1,16 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="20sp"
-        android:textColor="@color/text_blue"
-        android:gravity="center"
-        android:text="呵呵"/>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/r_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="冒泡排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="冒泡排序（Bubble Sort，台湾译为：泡沫排序或气泡排序）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_a">
+
+            <ImageView
+                android:id="@+id/iv_img1"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="插入排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img1"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="插入排序的基本思想是：每步将一个待排序的记录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img1"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc1"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_b">
+
+            <ImageView
+                android:id="@+id/iv_img2"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="折半插入排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img2"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="折半插入排序（Binary Insertion Sort）是对插入排序算法的一种改进，所谓排序算法过程，就是不断的依次将元素插入前面已排好序的序列中。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img2"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc2"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_c">
+
+            <ImageView
+                android:id="@+id/iv_img3"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="基数排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img3"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或bin sort，顾名思义，它是透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用，基数排序法是属于稳定性的排序，其时间复杂度为O (nlog(r)m)，其中r为所采取的基数，而m为堆数，在某些时候，基数排序法的效率高于其它的稳定性排序法。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img3"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc3"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_d">
+
+            <ImageView
+                android:id="@+id/iv_img4"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="希尔排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img4"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="希尔排序(Shell's Sort)是插入排序的一种又称“缩小增量排序”（Diminshing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。
+希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img4"
+                android:layout_alignParentRight="true" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc4"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_e">
+
+            <ImageView
+                android:id="@+id/iv_img5"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="归并排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img5"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="归并排序（MERGE-SORT）是建立在归并操作上的一种有效的排序算法,该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img5"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc5"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_f">
+
+            <ImageView
+                android:id="@+id/iv_img6"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="直接选择排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img6"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="直接选择排序(Straight Select Sorting) 也是一种简单的排序方法，它的基本思想是：第一次从R[0]~R[n-1]中选取最小值，与R[0]交换，第二次从R[1]~R[n-1]中选取最小值，与R[1]交换，....，第i次从R[i-1]~R[n-1]中选取最小值，与R[i-1]交换，.....，第n-1次从R[n-2]~R[n-1]中选取最小值，与R[n-2]交换，总共通过n-1次，得到一个按排序码从小到大排列的有序序列。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img6"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc6"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/r_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/r_g">
+
+            <ImageView
+                android:id="@+id/iv_img7"
+                android:layout_width="72dp"
+                android:layout_height="53dp"
+                android:layout_marginLeft="3dp"
+                app:srcCompat="@drawable/bsort"/>
+
+            <TextView
+                android:id="@+id/tv_title7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="堆排序"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/iv_img7"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="14dp" />
+            <TextView
+                android:id="@+id/tv_desc7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:ellipsize="end"
+                android:text="堆排序(Heapsort)是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父节点的值，即A[PARENT[i]] >= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶。"
+                android:textColor="#99000000"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_img7"
+                android:layout_alignParentRight="true" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:layout_below="@+id/tv_desc7"
+                android:layout_marginTop="5dp"
+                android:background="@color/text_gray"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+    
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textColor="@color/text_blue"
+            android:gravity="center"
+            android:text="呵呵"/>
+    
+    </LinearLayout>-->

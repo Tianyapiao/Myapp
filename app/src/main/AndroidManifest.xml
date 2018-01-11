@@ -30,6 +30,13 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="com.example.asus.algorithm.login"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

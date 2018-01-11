@@ -13,21 +13,14 @@ import com.example.asus.algorithm.R;
  * Created by Asus on 2018/1/7.
  */
 
-public class IndexFragment extends Fragment {
-    /*private String context;
-    private TextView mTextView;
+public class MyInfoFragment extends Fragment {
 
-
-    public IndexFragment(String context) {
-        this.context = context;
-    }
-*/
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.indexfragment, container, false);
+        View view = inflater.inflate(R.layout.activity_myinfo, container, false);
 
         return view;
     }
