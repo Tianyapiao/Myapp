@@ -86,7 +86,6 @@
         android:layout_above="@id/rd_group"
         android:layout_below="@id/ly_top_bar"
         android:background="#ffffff">
-
     </FrameLayout>
 
 </RelativeLayout>

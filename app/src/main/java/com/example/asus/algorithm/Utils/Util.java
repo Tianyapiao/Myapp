@@ -12,9 +12,7 @@ public class Util {
         for (String s:list) {
             str += s;
             str += "  ";
-
         }
-
         return str;
     }
 }

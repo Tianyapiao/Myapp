@@ -15,24 +15,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="80dp"
         >
+
         <EditText
             android:id="@+id/et_value"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:hint="元素值"/>
+            android:hint="输入数据"
+            android:inputType="number"/>
+
         <Button
             android:id="@+id/btn_insert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:text="插入节点"/>
+
+            android:layout_weight="1"
+            android:text="添加并排序"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="清空数据"/>
 
     </LinearLayout>
+
     <ListView
         android:id="@+id/lv_code"
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:layout_height="320dp"/>
 
    <!-- <com.yichun.linear.linklist.customview.SingleLinkListView
         android:id="@+id/cv_insert"
@@ -44,6 +58,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
+
         <Button
             android:id="@+id/btn_play"
             android:layout_width="0dp"
@@ -60,14 +75,16 @@
             android:textSize="15sp"
             android:text="暂停"
             />
+
         <Button
             android:id="@+id/btn_back"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:textSize="15sp"
             android:text="上一步"
+            android:textSize="15sp"
             />
+
         <Button
             android:id="@+id/btn_next"
             android:layout_width="0dp"
@@ -78,14 +95,70 @@
             />
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="排序前："
+                android:textSize="18sp"
+                android:textColor="@color/black_deep"/>
+
+            <TextView
+                android:id="@+id/tv_sort_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text=""
+                android:textColor="@color/orange"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="排序后："
+                android:textSize="18sp"
+                android:textColor="@color/black_deep"
+                />
+
+            <TextView
+                android:id="@+id/tv_sort_after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:textSize="18sp"
+                android:textColor="@color/red"
+                android:text=""/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/lv_var"
         android:layout_width="match_parent"
-        android:layout_height="80dp"/>
+        android:layout_height="wrap_content"/>
+
     <ListView
         android:id="@+id/lv_question"
         android:layout_width="match_parent"
-        android:layout_height="160dp"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
 </ScrollView>

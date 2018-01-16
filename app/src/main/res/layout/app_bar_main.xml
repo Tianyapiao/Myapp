@@ -24,7 +24,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <include android:id="@+id/des" layout="@layout/algorithm_describle" android:visibility="visible"/>
-    <include android:id="@+id/bubble" layout="@layout/bubblesort" android:visibility="invisible"/>
+    <include android:id="@+id/bubble" layout="@layout/activity_sort" android:visibility="invisible"/>
+    <include android:id="@+id/exercise" layout="@layout/exercise_main" android:visibility="invisible"/>
+    <include android:id="@+id/comment" layout="@layout/comment" android:visibility="invisible"/>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

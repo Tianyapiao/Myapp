@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="next_insert_codes">
-        <item> void bubbleSort(int *arr,int len){</item>
-        <item>	for(int i=0;i &lt; len-1;i++){  </item>
-        <item>	    for(int j=0;j &lt; len-i-1;j++){ </item>
-        <item>            if(arr[j]>arr[j+1]){</item>
-        <item>                  int temp = arr[j];</item>
-        <item>                  arr[j] = arr[j+1];</item>
-        <item>                  arr[j+1] = temp;</item>
-        <item>             }</item>
-        <item>	     }</item>
-        <item>	}</item>
+        <item>void bubbleSort(int *arr,int len){</item>
+        <item>&#160;&#160;&#160;&#160;for(int i=0;i &lt; len-1;i++){  </item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;for(int j=0;j &lt; len-i-1;j++){ </item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if(arr[j]>arr[j+1]){</item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;int temp = arr[j];</item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;arr[j] = arr[j+1];</item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;arr[j+1] = temp;</item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</item>
+        <item>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</item>
+        <item>&#160;&#160;	}</item>
         <item>}</item>
     </string-array>
 </resources>

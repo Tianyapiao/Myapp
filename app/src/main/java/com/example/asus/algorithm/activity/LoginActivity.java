@@ -1,5 +1,6 @@
 package com.example.asus.algorithm.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.asus.algorithm.MainActivity;
 import com.example.asus.algorithm.R;
 import com.example.asus.algorithm.db.UserDao;
 import com.example.asus.algorithm.db.entity.User;
@@ -46,8 +48,14 @@ public class LoginActivity extends AppCompatActivity {
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_register);
 
-        et_phone = (EditText) findViewById(R.id.et_usertel);
+        et_phone = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
+    }
+
+    public void back(View view) {
+        Intent intent =new Intent(LoginActivity.this, MainActivity.class);
+        intent.putExtra("id",3);
+        startActivity(intent);
     }
 
     public void click(View view) {
@@ -64,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                 break;
 
             case R.id.btn_register:
-                if (TextUtils.isEmpty(phone)||TextUtils.isEmpty(password)){
+                /*if (TextUtils.isEmpty(phone)||TextUtils.isEmpty(password)){
                     Toast.makeText(this,"手机号或密码不能为空", Toast.LENGTH_SHORT).show();
                 }else{
                     // 保存数据到数据库，并且同步显示到界面
@@ -80,8 +88,10 @@ public class LoginActivity extends AppCompatActivity {
                             throw new RuntimeException();
                         }
                     }
-                }
+                }*/
 
+                Intent intent =new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
                 break;
 
         }

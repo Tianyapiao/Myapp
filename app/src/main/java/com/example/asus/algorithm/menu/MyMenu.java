@@ -37,12 +37,13 @@ public class MyMenu {
                 //Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
                 //判断是否是注册
                 if ("注册".equals(item.getTitle())){
-
                     Toast.makeText(activity, item.getTitle(), Toast.LENGTH_SHORT).show();
+                    Intent intent =new Intent("com.example.asus.algorithm.register");
+                    //intent.putExtra("","");
+                    activity.startActivity(intent);
                 }else if("登录".equals(item.getTitle())){
                     Toast.makeText(activity, item.getTitle(), Toast.LENGTH_SHORT).show();
                     Intent intent =new Intent("com.example.asus.algorithm.login");
-                    //intent.putExtra("","");
                     activity.startActivity(intent);
 
                 }else{

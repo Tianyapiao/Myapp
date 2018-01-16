@@ -46,8 +46,6 @@ public class BubbleSortActivity extends AppCompatActivity {
                     arr[i]=a;
                 }
 
-               //BubbleSort.bubbleSort(arr);
-               //String[] strings = new String[dataInt.length];
                 List<String> stringList=new ArrayList<>();
                 //排序
                 int temp = 0;

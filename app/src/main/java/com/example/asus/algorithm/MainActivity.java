@@ -1,6 +1,7 @@
 package com.example.asus.algorithm;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private TextView topbar;
     private ImageView iv_more;
 
+    private String username;
+    private TextView tv_name;
+
     //构造适配器
     //List<Fragment> fragments=new ArrayList<>();
 
@@ -46,9 +50,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         // UI组件初始化与事件绑定 
         initView();
 
-        //fragments.add(new PaixuFragment());
-
-        //FPAdapter adapter = new FPAdapter(getSupportFragmentManager(), fragments);
     }
 
     private void initView() {
@@ -64,9 +65,28 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         rd_paixu = (RadioButton) findViewById(R.id.rd_paixu);
         rd_profile = (RadioButton) findViewById(R.id.rd_profile);
 
-        rd_index.setChecked(true);
+        Intent data = getIntent();
+        int id = data.getIntExtra("id", 0);
+        username=data.getStringExtra("username");
+
+        if (id==3){
+            rd_profile.setChecked(true);
+            /*if (username!=null){
+                tv_name = (TextView) getSupportFragmentManager().
+                        findFragmentById(R.id.fragment_container)
+                        .getView().findViewById(R.id.tv_name);
+                if (tv_name!=null){
+                    tv_name.setText(username);
+                }
+            }*/
+
+        }else{
+            rd_index.setChecked(true);
+        }
+
 
     }
+
 
     //隐藏所有的Fragment
     public void hideAllFragment(FragmentTransaction transaction){
@@ -98,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 }
                 if(fg1==null){
                     fg1 = new IndexFragment();
-
                     transaction.add(R.id.fragment_container,fg1);
                 }else{
                     transaction.show(fg1);
